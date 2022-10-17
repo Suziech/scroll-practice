@@ -1,0 +1,179 @@
+<h1><div class="logo"><div id="top"></div><div id="bottom"></div></div>What i have learned</h1>
+<div class="icon">
+ <div class="circle">
+ <div class="logo">
+ <div id="top"></div>
+ <div id="bottom"></div>
+ </div>
+ </div>
+</div>
+<h2>Learned about visual designing</h2>
+<img class="fixed-image" src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKWXkrnmzwwncvJBRdjQ1t2zWDc7G3JvoUoQ&usqp=CAU>
+
+<section>
+  <h1>CSS in Visual design is a combination of typography, color theory, graphics, animation, page layout, and more to help deliver your unique message, this help yu to have different visuals in your webpage and it have the "em" tag which italicize texts and the is also the "s"tag that strikethroug text<p>also remembere the box-shadow and card-like elemets and also there is text-trasform property which turn text into the uppercase text
+howevere the is the hue of the color and tone of a color this CSS design also create textures by adding a subtle patteren as the background image thsu visual design create graphics using CSS and i also learned about how the CSS  @KEYFRAME & ANIMATION  work  for example amination in CSS changes the horizontal line and also learned about the How Bezier Curves Work thsi bezier curve and moves graphic by making the motion to be more natural</P>
+</h1>
+  <h2>visual designing</h2>
+</section>
+
+-----------------------------------------------------------------
+@import "bourbon";
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+  font-family: $helvetica;
+  font-weight: 100;
+  letter-spacing: .3em;
+  margin-top: 100px;
+  & > div.logo {
+    display: inline-block;
+    @include transform(scale(.7));
+    margin: 0 -5px;
+    top: 20px;
+    right: 5px;
+    #top, #bottom {
+      border: 3px solid white;
+      border-radius: 1px;
+      &::before, &::after {
+        width: 3px; 
+      }
+    }
+    #top {
+      &::before {
+        bottom: 19px;
+        left: 28px;
+      }
+      &::after {
+        right: 51px;
+        bottom: 19px; 
+      }
+    }
+    #bottom {
+      &::before {
+        top: 19px;
+        left: 51px;
+      }
+      &::after {
+        right: 28px;
+        top: 19px;
+      }
+    }
+  }
+}
+
+h2 {
+  color: white;
+  font-family: $helvetica;
+  font-weight: 100;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include size(120px);
+  border-radius: 28px;
+  background: #5a5a5a;
+  @include linear-gradient( rgba(#8c8c8c, 0.8), rgba(#262626, 0.7));
+  margin-top: 0px;
+}
+
+.circle {
+  @include size(94px);
+  border: 6px solid white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  position: relative;
+  @include size(61px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //border: 1px solid white;
+  #top, #bottom {
+    @include size(46px);
+    border: 6px solid white;
+    border-radius: 4px;
+    @include transform(scale(1, 0.67) rotate(315deg));
+    @include transform-origin(left bottom);
+    position: absolute;
+    left: 30px;
+  }
+  #top {
+    top: -5px;
+    &::before, &::after {
+      content: '';
+      width: 4px;
+      height: 22px;
+      background: white;
+      position: absolute;
+      @include transform(rotate(45deg) scale(1, 1.33));
+    }
+    &::before {
+      bottom: 15px;
+      left: 24px;
+    }
+    &::after {
+      right: 46px;
+      bottom: 15px;
+    }
+  }
+  #bottom {
+    top: 14px;
+    &::before, &::after {
+      content: '';
+      width: 4px;
+      height: 22px;
+      background: white;
+      position: absolute;
+      @include transform(rotate(45deg) scale(1, 1.33));
+    }
+    &::before {
+      top: 15px;
+      left: 46px;
+    }
+    &::after {
+      right: 24px;
+      top: 15px;
+    }
+  }
+}
+
+section {
+  margin-top: 100px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgba(#5a5a5a, 0.9);
+  box-shadow: 2px 2px 0px 2px rgba(#5a5a5a, 0.6);
+  h1 {
+    color: white;
+    margin-top: 0px; 
+    font-weight: 400;
+  }
+  h2 {
+    color: white;
+    margin: 0;
+    font-weight: 100;
+  }
+}
+
